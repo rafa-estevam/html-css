@@ -1,0 +1,170 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    background-color: blueviolet;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo{
+    line-height: 80px;
+    font-size: 2em;
+    margin-left: 30px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 30px 8px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-size: 1.3em;
+}
+
+nav ul li a:hover{
+    color: rgb(19, 19, 56);
+    background-color: white;
+    border-radius: 3px;
+    transition: 1s;
+}
+
+label.checkbtm{
+    line-height: 80px;
+    font-size: 2em;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-top: 24px;
+    margin-right: 40px;
+    display: none;
+    
+}
+
+label.checkbtm span{
+    cursor: pointer;
+    position: absolute;
+    margin-top: 30px;
+    right: 30px;
+    display: block;
+    height: 5px;
+    width: 40px;
+    border-radius: 30px;
+    background: white;
+    transition: 0.25s ease-in-out;
+    
+}
+
+label.checkbtm span:nth-child(1){
+    top: 0px;
+}
+
+label.checkbtm span:nth-child(2){
+    top: 10px;
+}
+
+label.checkbtm span:nth-child(3){
+    top: 20px;
+}
+
+
+
+input#check{
+    display: none;
+}
+
+main{
+    position: relative;
+    top: 10px;
+    min-width: 480px;
+    max-width: 800px;
+    height: 100%;
+    margin: auto;
+    border: 1px solid black;
+}
+
+main section h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline-color: rgb(17, 17, 17);
+}
+
+main  section p{
+    text-align: justify;
+    text-indent: 30px;
+    margin: 10px;
+}
+
+@media(max-width: 950px){
+    labol.logo{
+        font-size: 1.5em;
+        margin-left: 50px;
+    }
+    nav ul li a {
+        font-size: 1em;
+    }
+}
+
+@media(max-width: 750px){
+    label.checkbtm{
+        display: block;
+    }
+
+    ul{
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        background-color: teal;
+        top: 80px;
+        right: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px;
+        line-height: 30px;
+    }
+    input#check:checked ~ul{
+        right: 0;
+    }
+
+    input#check:checked + label.checkbtm span:nth-child(1){
+        transform: rotate(-45deg);
+        top: 8px;
+        
+    }
+    
+    input#check:checked + label.checkbtm span:nth-child(2){
+        opacity: 0;
+        transition: none;
+    }
+    
+    input#check:checked + label.checkbtm span:nth-child(3){
+        display: block;
+        transform: rotate(45deg);
+        top: 8px;
+    }
+}

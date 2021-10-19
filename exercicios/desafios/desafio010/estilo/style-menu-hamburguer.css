@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#check-menu{
+    display: none;
+}
+
+.menu{
+    position: relative;
+    width: 100%;
+}
+
+label{
+    position: absolute;
+    cursor: pointer;
+    display: none;
+    height: 22px;
+    width: 30px;
+    right: 30px;
+    z-index: 1;
+    top: -150px;
+    left: 50px;
+}
+
+label span{
+    margin: 5px 0px;
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    border-radius: 5px;
+    line-height: 5px;
+}
+
+@media(max-width: 600px){
+    label{
+        display: block;
+    }
+    nav{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: teal;
+        top: 190px;
+        left: -100%;
+        text-align: center;
+        transition: ease-in .5s;
+
+    }
+
+    nav a {
+        display: block;
+        margin: 50px;
+        line-height: 30px;
+    }
+
+    input#check-menu:checked ~nav{
+        left: 0px;
+    }
+
+    input#check-menu:checked + label.checkbtm span:nth-child(1){
+        position: absolute;
+        transform: rotate(-45deg);
+        top: 8px;
+        
+    }
+
+    input#check-menu:checked + label.checkbtm span:nth-child(2){
+        opacity: 0;
+        transition: none;
+    }
+
+    input#check-menu:checked + label.checkbtm span:nth-child(3){
+        position: absolute;
+        top: 8px;
+        transform: rotate(45deg);
+        
+    }
+
+     header h1{
+        font-size: 1.8em;
+    }
+
+    header p{
+        font-size: .9em;
+    }
+}
